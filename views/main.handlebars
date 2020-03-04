@@ -123,7 +123,7 @@
         </div>
     </div>
     <div name="leaderE4Div" class="sectionDiv">
-        <div name="leaderDiv" class="multipanelDiv" id="leaderDiv">
+        <div name="leaderDiv" class="panelDiv" id="leaderDiv">
             <h2 id="leaderboardTitle" class="sectionTitles">Leaderboard</h2>
             <table name="leaderboarTable" id="leaderboardTable">
                 {{#each databaseObject}}
@@ -137,7 +137,9 @@
                 {{/each}}
             </table>
         </div>
-        <div name="e4Div" id="e4Div" class="multipanelDiv">
+    </div>
+    <div class="sectionDiv">
+        <div name="e4Div" id="e4Div" class="panelDiv">
             <h2 class="sectionTitles">The Elite 4</h2>
             <div class="infoDiv">
                 <i class="infoText">Defeat these players to earn bonus points!</i>
@@ -155,16 +157,6 @@
                         <br>
                         <i class="infoText">200 points</i>
                     </td>
-                    <td>
-                        <label class="labelText">Member Delta</label>
-                        <br>
-                        <i class="infoText">150 points</i>
-                    </td>
-                    <td>
-                        <label class="labelText">Member Omega</label>
-                        <br>
-                        <i class="infoText">100 points</i>
-                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -172,12 +164,6 @@
                     </td>
                     <td>
                         <img src="../images/beta.png" alt="image">
-                    </td>
-                    <td>
-                        <img src="../images/delta.png" alt="image">
-                    </td>
-                    <td>
-                        <img src="../images/omega.png" alt="image">
                     </td>
                 </tr>
                 <tr>
@@ -207,6 +193,28 @@
                         <br>
                         <i name="lMinorStats" class="infoText">{{e4Object.beta.winRatio}} win rate</i>
                     </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="labelText">Member Delta</label>
+                        <br>
+                        <i class="infoText">150 points</i>
+                    </td>
+                    <td>
+                        <label class="labelText">Member Omega</label>
+                        <br>
+                        <i class="infoText">100 points</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../images/delta.png" alt="image">
+                    </td>
+                    <td>
+                        <img src="../images/omega.png" alt="image">
+                    </td>
+                </tr>
+                <tr>
                     <td>
                         <label class="normalText">{{e4Object.delta.screenName}}</label>
                         <br>
@@ -233,7 +241,7 @@
                         <br>
                         <i name="lMinorStats" class="infoText">{{e4Object.omega.winRatio}} win rate</i>
                     </td>
-                </tr> 
+                </tr>
             </table>
         </div>
     </div>
