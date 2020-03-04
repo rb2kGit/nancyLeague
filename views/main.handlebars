@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<article>
+    <div class="sectionDiv">
+        <div name="userStatsPanel" class="panelDiv">
+            <h2 id="leagueStatsTitle" class="sectionTitles">My League Stats</h2>
+            <div id="userStatsDiv">
+                <table name="userStatsTable" id="userStatsTable" class="statsTable">
+                    <tr>
+                        <td>
+                            <label class="labelText">Matches Played</label>
+                        </td>
+                        <td>
+                            <label class="normalText">{{userData.matchesPlayed}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="labelText">Wins</label>
+                        </td>
+                        <td>
+                            <label class="normalText">{{userData.wins}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="labelText">Losses</label>
+                        </td>
+                        <td>
+                            <label class="normalText">{{userData.losses}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="labelText">Win Streak</label>
+                        </td>
+                        <td>
+                            <label class="normalText">{{userData.winStreak}}</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="hStatsDiv">
+                <table name="hStatsTable" id="hStatsTable">
+                    <tr>
+                        <td id="rightAlignTD">
+                            <label class="specialText" style="color:green">{{userData.winRatio}} </label>
+                        </td>
+                        <td>
+                            <label class="specialText">Win Ratio</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="specialText" style="color:green">{{userData.points}} </label>
+                        </td>
+                        <td>
+                            <label class="specialText">Points </label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="sectionDiv">
+        <div name="matchDiv" class="panelDiv">
+            <h2 class="sectionTitles">Battle Report</h2>
+            <div class="infoDiv">
+                <i class="infoText">Report your wins here.</i>
+            </div>
+            <div id="matchFormDiv">
+                <form id="playerList" method="post" action="/winner">
+                    <table name="brTable" id="brTable">
+                        <tr>
+                            <td>
+                                <label class="labelText">Defeated:</label>
+                                <br>
+                                <select name="playerDrop" id="playerDrop">
+                                    <option></option>
+                                    {{#each playerlistObject}}
+                                    <option value="{{this.userName}}" name="playerOption" id="playerOption">{{this.screenName}}</option>
+                                    {{/each}}
+                                </select>
+                            </td>
+                            <td>
+                                <label class="labelText">Games: </label>
+                                <label name="matchLabel" id="matchLabel" class="labelText" for="matchRange">1</label>
+                                <br>
+                                <input name="matchAmount" id="matchRange" type="range" min="1" max="10" value="1" oninput="labelInput()"></input>
+                            </td>
+                            <td>
+                                <button id="winSubmit" type="submit" value="Beat em">Beat em'</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="sectionDiv">
+        <div class="panelDiv">
+            <h2 id="claimTitle" class="sectionTitles">Claim Rewards</h2>
+            <div id="pointsDiv">
+                <label class="labelText">My points: {{userData.points}}</label>
+            </div>
+            <div class="infoDiv">
+                <i class="infoText">Redeem points for rewards here!</i>
+            </div>
+            <form method="post" action="/cashin">
+                <table id="claimTable">
+                    <tr>
+                        <td>
+                            <label name="packAmount" id="packAmount" class="labelText">1</label>
+                            <label class="labelText">Packs</label>
+                            <br>
+                            <input name="packNumber" id="packNumber" type="range" min="1" max="10" value="1" oninput="packLabelInput()"></input>
+                        </td>
+                        <td>
+                            <button name="cashPoints" id="cashPoints" type="submit" value="submit">Those packs are mine!</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div name="leaderE4Div" class="sectionDiv">
+        <div name="leaderDiv" class="multipanelDiv" id="leaderDiv">
+            <h2 id="leaderboardTitle" class="sectionTitles">Leaderboard</h2>
+            <table name="leaderboarTable" id="leaderboardTable">
+                {{#each databaseObject}}
+                <tr>
+                    <td>
+                        <label class="labelText">{{this.screenName}}</label>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{this.wins}} wins / {{this.winRatio}} win rate</i>
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+        <div name="e4Div" id="e4Div" class="multipanelDiv">
+            <h2 class="sectionTitles">The Elite 4</h2>
+            <div class="infoDiv">
+                <i class="infoText">Defeat these players to earn bonus points!</i>
+            </div>
+            <br>
+            <table name="e4Table" id="e4Table">
+                <tr>
+                    <td>
+                        <label class="labelText">Member Alpha</label>
+                        <br>
+                        <i class="infoText">250 points</i>
+                    </td>
+                    <td>
+                        <label class="labelText">Member Beta</label>
+                        <br>
+                        <i class="infoText">200 points</i>
+                    </td>
+                    <td>
+                        <label class="labelText">Member Delta</label>
+                        <br>
+                        <i class="infoText">150 points</i>
+                    </td>
+                    <td>
+                        <label class="labelText">Member Omega</label>
+                        <br>
+                        <i class="infoText">100 points</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../images/alpha.png" alt="image">
+                    </td>
+                    <td>
+                        <img src="../images/beta.png" alt="image">
+                    </td>
+                    <td>
+                        <img src="../images/delta.png" alt="image">
+                    </td>
+                    <td>
+                        <img src="../images/omega.png" alt="image">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="normalText">{{e4Object.alpha.screenName}}</label>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.alpha.matchesPlayed}} matches Played</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.alpha.wins}} wins</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.alpha.losses}} losses</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.alpha.winStreak}} win streak</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.alpha.winRatio}} win rate</i>
+                    </td>
+                    <td>
+                        <label class="normalText">{{e4Object.beta.screenName}}</label>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.beta.matchesPlayed}} matches Played</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.beta.wins}} wins</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.beta.losses}} losses</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.beta.winStreak}} win streak</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.beta.winRatio}} win rate</i>
+                    </td>
+                    <td>
+                        <label class="normalText">{{e4Object.delta.screenName}}</label>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.delta.matchesPlayed}} matches Played</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.delta.wins}} wins</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.delta.losses}} losses</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.delta.winStreak}} win streak</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.delta.winRatio}} win rate</i>
+                    </td>
+                    <td>
+                        <label class="normalText">{{e4Object.omega.screenName}}</label>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.omega.matchesPlayed}} matches Played</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.omega.wins}} wins</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.omega.losses}} losses</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.omega.winStreak}} win streak</i>
+                        <br>
+                        <i name="lMinorStats" class="infoText">{{e4Object.omega.winRatio}} win rate</i>
+                    </td>
+                </tr> 
+            </table>
+        </div>
+    </div>
+</article>

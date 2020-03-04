@@ -1,0 +1,28 @@
+{
+  "name": "nancyleague2",
+  "version": "1.0.0",
+  "description": "nancy venia league",
+  "main": "app.js",
+  "dependencies": {
+    "client-sessions": "^0.8.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "express-sessions": "^1.0.6",
+    "handlebars": "^4.7.3",
+    "mongo": "^0.1.0",
+    "mongodb": "^3.5.4",
+    "nodemon": "^2.0.2",
+    "npm-start": "^1.4.2",
+    "partials": "^0.1.0",
+    "randomstr": "0.0.1",
+    "randomstring": "^1.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arber Shpiragu",
+  "license": "ISC"
+}

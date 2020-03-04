@@ -1,0 +1,318 @@
+body{
+    background-image: url("grayBack.jpg");
+    margin: 0px;
+}
+
+.headerBar{
+    box-shadow: 0px 3px 5px 2px #888888;
+
+    position: sticky;
+    top: 0;
+}
+
+.logInput{
+    width: 100%;
+    height: 25px;
+
+    border-radius: 4px;
+    border-style: solid;
+    border-color: rgb(187, 184, 184);
+}
+
+.sectionDiv{
+    padding: 10px;
+}
+
+.panelDiv{
+    width: 100%;
+
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 3px 5px 2px #888888;
+}
+
+.multipanelDiv{
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 3px 5px 2px #888888;
+}
+
+.sectionTitles{
+    background-color: #3B4CCA;
+    border-color: #3B4CCA;
+    border-style: solid;
+    border-width: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    color: white;
+    border-radius: 4px;
+    
+    text-align: left;
+    margin: 0px;
+}
+
+.infoDiv{
+    padding: 10px;
+}
+
+/*Text classes*/
+.labelText{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.2em;
+}
+
+.normalText{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.1em;
+}
+
+.infoText{
+    font-size: 1.0em;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.specialText{
+    font-size: 2.6em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+/*Welcome page CSS*/
+#welcomeHeaderDiv{
+    border-color:rgb(91, 170, 190);
+    border-width: 2px;
+    border-style: solid;
+    background-color: rgb(91, 170, 190);
+    box-shadow: 0px 3px 5px 2px #888888;
+}
+
+#wHeaderText{
+    color: white;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 1.5em;
+
+    margin-left: 10px;
+    text-align: left;
+    display: inline-block;
+}
+
+#authorText{
+    color: white;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 1.0em;
+
+    margin-top: 20px;
+    margin-right: 10px;
+    text-align: right;
+    position: inherit;
+    float: right;
+}
+
+/*Login page CSS*/
+#loginPageDiv{
+    width: 100%;
+}
+
+#loginFormDiv{
+    width: 50%;
+    background-color: white;
+    border-radius: 5px;;
+    box-shadow: 0px 3px 5px 2px #888888;
+    
+    padding: 5px;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#loginTable{
+    width: 100%;
+  
+    text-align: left;
+    padding: 5px;
+    border-spacing: 5px;
+}
+
+#logHeader{
+    font-size: 2em;
+    font-style: Verdana, Arial, sans-serif;
+    margin: 20px;
+}
+
+#logButton{
+    width: 200px;
+
+    background-color: rgb(91, 170, 190);
+    border-radius: 4px;
+
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+
+    padding: 5px;
+    margin-top: 5px;
+}
+
+#messageLabel{
+    font-size: 1.4em;
+    font: Verdana, Arial, sans-serif;
+    color: rgb(173, 0, 0);
+}
+
+/*Header Bar CSS.*/
+#mainHeader{
+    background-color: #FFDE00;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #FFDE00;
+}
+
+#mainHeaderText{
+    color: Black;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 1.5em;
+
+    margin-left: 10px;
+    text-align: left;
+    display: inline-block;
+}
+
+#mainHeaderLogout{
+    width: 200px;
+    background-color: #3B4CCA;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 1.0em;
+    color: white;
+
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+/*Main Page CSS*/
+#userStatsDiv{
+    display: inline-block
+}
+
+#userStatsTable{
+    border-spacing: 10px;
+    text-align: left;
+    margin: 5px;
+}
+
+#hStatsDiv{
+    float: right;
+}
+
+#hStatsTable{
+    margin: 5px;
+    text-align: left;
+    border-spacing: 10px;
+}
+
+#rightAlignTD{
+    text-align: right;
+}
+
+#leaderE4Div{
+    width: 100%;
+}
+
+#leaderDiv{
+    width: 225px;
+
+    float: left;
+}
+
+#leaderboardTable{
+    padding: 5px;
+    border-spacing: 5px;
+}
+
+#e4Div{
+    height: 426px;
+
+    background-color: white;
+    
+    margin-left: 235px;
+}
+
+#e4Table{
+    width: 100%;
+
+    padding: 5px;
+    border-spacing: 5px;
+    text-align: left;
+    margin: auto;
+}
+
+#matchFormDiv{
+    width: 100%;
+}
+
+#brTable{
+    width: 100%;
+
+    padding: 5px;
+}
+
+#playerDrop{
+    width: 200px;
+    height: 25px;
+}
+
+#winSubmit{
+    width: 200px;
+
+    background-color: #3B4CCA;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 1.0em;
+    color: white;
+
+    padding: 10px;
+}
+
+#matchRange{
+    width: 300px;
+
+    background-color: red;
+}
+
+#pointsDiv{
+    width: 200px;
+
+    background-color: #FFDE00;
+
+    float: right;
+    padding: 10px;
+    text-align: center;
+}
+
+#claimTable{
+    width: 100%;
+    margin: 10px;
+}
+
+#packNumber{
+    width: 300px;
+}
+
+#cashPoints{
+    width: 200px;
+
+    background-color: #3B4CCA;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 1.0em;
+    color: white;
+
+    padding: 10px;
+    margin: 20px;
+}
