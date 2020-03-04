@@ -342,7 +342,6 @@ MongoClient.connect(mongoURL, (err, client) => {
                     //Elite 4 data initializations.
                     var alphaPlayer, betaPlayer, deltaPlayer, omegaPlayer; 
                     e4Players = data;
-                    console.log(e4Players)
                     gamesPlayed = req.body.matchAmount;
 
                     //Player stat Calculations.    
