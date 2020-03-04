@@ -1,8 +1,12 @@
 <header>
-    <div name="mainHeaderDiv" id="mainHeader" class="headerBar">
-        <form name="logoutForm" method="post" action="logout">
-            <h1 id="mainHeaderText">"Fuck Yeah" Pokemon League</h1>
-            <button name="logoutButton" id="mainHeaderLogout">Log out</button>
-        </form>
+    <div id="mainHeaderDiv" class="headerBar">
+        <div id="headerTitleDiv">
+            <label class="titleText">Nancy Venia</label>
+            <br>
+            <label class="titleText">"Fuck Yeah" Pokemon League</label>
+        </div>
+        <div id="headerInfoDiv">
+            <p class="headerInfoText">{{userData.screenName}}</p>
+        </div>
     </div>
 </header>

@@ -94,14 +94,19 @@ MongoClient.connect(mongoURL, (err, client) => {
     }
 
     function lossCalc(opponentData, matchAmount){
+        var pointAward = 200;
+
         opponentData.matchesPlayed += 1 * matchAmount;
         opponentData.losses += 1 * matchAmount;
+
+
         if(opponentData.wins == 0){
             opponentData.winRatio = 0.0;
         }
         else{
             opponentData.winRatio = opponentData.wins / opponentData.losses
         }
+
         opponentData.winStreak = 0;
         opponentData.lossStreak = 1 * matchAmount;
         
@@ -110,7 +115,8 @@ MongoClient.connect(mongoURL, (err, client) => {
             if(opponentData.lossStacks < 5){
                 opponentData.lossStacks += 1;
             }
-            opponentData.points += (200 * (1 + 0.10 * opponentData.lossStacks));
+
+            opponentData.points += (pointAward * (1 + (0.10 * opponentData.lossStacks)));
         }
         
         return opponentData;

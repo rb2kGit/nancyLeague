@@ -1,40 +1,47 @@
-<article id="loginArticle">
+<article>
     <div id="loginPageDiv">
         <div id="loginFormDiv">
-        <form method="post" action ="/main">
-        <table id="loginTable">
-            <tr>
-                <td id="loginTD">
-                    <label name="userNameLabel" id="userNameLabel" class="labelText">Username</label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input name="usernameInput" class="logInput" type="text"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label name="passwordLabel" id="passwordLabel" class="labelText">Password</label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input name="passwordInput" class="logInput" type="text" secret="true"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button name="loginButton" id="logButton" type="submit" value="submit">Log In</button>                    
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label name="messageLabel" id="messageLabel">{{userMessage.errorMessage}}</label>
-                </td>
-            </tr>
-        </table>
-        </form>
+            <div id="welcomeTextDiv">
+                <p class="normalText">Welcome to the Nancy Venia leagues web app.
+                            Please log in below.
+                </p>
+            </div>
+            <div>
+                <form method="post" action ="/main">
+                <table id="loginTable">
+                    <tr>
+                        <td id="loginTD">
+                            <label name="userNameLabel" id="userNameLabel" class="labelText">Username</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input name="usernameInput" class="logInput" type="text"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label name="passwordLabel" id="passwordLabel" class="labelText">Password</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input name="passwordInput" class="logInput" type="text" secret="true"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button name="loginButton" class="logoutButton" id="loginLogButton" type="submit" value="submit">Log In</button>                    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label name="messageLabel" id="messageLabel">{{userMessage.errorMessage}}</label>
+                        </td>
+                    </tr>
+                </table>
+                </form>
+            </div>
         </div>
     </div>
 </article>
