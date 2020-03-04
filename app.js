@@ -135,11 +135,11 @@ MongoClient.connect(mongoURL, (err, client) => {
         if(!req.userSession.user){
             req.userSession.user = "unknown";
             res.render("login", {
-                userMessage, layout: "welcome"});
+                userMessage, layout: "welcome.handlebars"});
         }
         else if(req.userSession.user == "unknown"){
             res.render("login", {
-                userMessage, layout: "welcome"});
+                userMessage, layout: "welcome.handlebars"});
         }
         else{
             res.redirect("main");
