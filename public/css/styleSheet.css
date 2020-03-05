@@ -33,15 +33,18 @@ body{
 }
 
 .sectionDiv{
-    padding: 10px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    margin-left: 12px;
+    margin-right: 12px;
 }
 
 .panelDiv{
-    width: 100%;
-
     background-color: white;
     border-radius: 4px;
     box-shadow: 0px 3px 5px 2px #888888;
+
+    overflow: hidden;
 }
 
 .sectionTitles{
@@ -92,6 +95,7 @@ body{
 .titleText{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 18px;
+    font-weight: bold;
 }
 
 .headerInfoText{
@@ -135,7 +139,7 @@ body{
 
 /*Login page CSS*/
 #loginPageDiv{
-    width: 400px;
+    width: 350px;
     min-width: 300px;
 
     margin-top: 25px;
@@ -201,19 +205,18 @@ body{
     margin-right: 10px;
 }
 
-#mainHeaderLogout{
-    background-color: #3B4CCA;
-    font-family: Arial, Verdana, sans-serif;
-    font-size: 16px;
-    color: white;
-
-    float: right;
+/*Main Page CSS*/
+#mainLogout{
     margin-top: 10px;
-    margin-right: 20px;
-    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/*Main Page CSS*/
+#logoutDiv{
+    text-align: center;
+}
+
 #userStatsDiv{
     display: inline-block
 }
