@@ -271,8 +271,8 @@ MongoClient.connect(mongoURL, (err, client) => {
         if(req.body.usernameInput && req.body.passwordInput){
 
             //Initialize user data variables.
-            var nameInput = req.body.usernameInput;
-            var passInput = req.body.passwordInput;
+            var nameInput = req.body.usernameInput.toLowerCase();
+            var passInput = req.body.passwordInput.toLowerCase();
 
             
             //Retrieve user data from the database.
