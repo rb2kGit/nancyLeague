@@ -54,15 +54,14 @@ MongoClient.connect(mongoURL, (err, client) => {
         userData.wins += 1;
         userData.winStreak += 1;
         userData.lossStreak = 0;
-        userData.lossStacks = 0;
-        userData.prevOpp = opponentData.screenName;
+        userData.lossStacks = 0; 
         
         //Point modifiers.
-        if(opponentData.screenName == userData.prevOpp){
-            pointAward = 50;
+        if(userData.prevOpp == opponentData.screenName){
+            pointAward += 50;
             userData.points += pointAward;
         }
-        else if(opponentData.screenName == e4Players[0].alpha)
+        else if(opponentData.screenName == e4Data[0].alpha)
         {
             pointAward += 250;
             userData.points += pointAward;
@@ -86,6 +85,8 @@ MongoClient.connect(mongoURL, (err, client) => {
             userData.points += pointAward;
         }
         
+        userData.prevOpp = opponentData.screenName;
+
         //Win Ratio calculator.
         if(userData.losses == 0.0){
             userData.winRatio = userData.wins

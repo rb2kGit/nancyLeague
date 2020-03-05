@@ -6,76 +6,79 @@
             <div class="infoDiv">
                 <i class="infoText">These are your personal stats in this league.</i>
             </div>
-            <div id="userStatsDiv">
-                <table id="userStatsTable" class="statsTable">
-                    <tr>
-                        <td>
-                            <label class="labelText">Matches Played</label>
-                            <br>
-                            <label class="normalText">{{userData.matchesPlayed}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="labelText">Wins</label>
-                            <br>
-                            <label class="normalText">{{userData.wins}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="labelText">Losses</label>
-                            <br>
-                            <label class="normalText">{{userData.losses}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="labelText">Win Streak</label>
-                            <br>
-                            <label class="normalText">{{userData.winStreak}}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="labelText">Loss Streak</label>
-                            <br>
-                            <label class="normalText">{{userData.lossStreak}}</label>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div id="hStatsDiv">
-                <table id="hStatsTable">
-                    <tr>
-                        <td id="rightAlignTD">
-                            <label class="labelText" style="color:green">{{userData.winRatio}} </label>
-                        </td>
-                        <td>
-                            <label class="labelText">Win Rate</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="rightAlignTD">
-                            <label class="labelText" style="color:green">{{userData.points}} </label>
-                        </td>
-                        <td>
-                            <label class="labelText">Points</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="rightAlignTD">
-                            <label class="labelText" style="color:green">{{userData.lossStacks}}</label>
-                        </td>
-                        <td>
-                            <p class="labelText">
-                                Bonus
+            <div>
+
+                <div id="userStatsDiv">
+                    <table id="userStatsTable" class="statsTable">
+                        <tr>
+                            <td>
+                                <label class="labelText">Matches Played</label>
                                 <br>
-                                Stacks
-                            </p>
-                        </td>
-                    </tr>
-                </table>
+                                <label class="normalText">{{userData.matchesPlayed}}</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="labelText">Wins</label>
+                                <br>
+                                <label class="normalText">{{userData.wins}}</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="labelText">Losses</label>
+                                <br>
+                                <label class="normalText">{{userData.losses}}</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="labelText">Win Streak</label>
+                                <br>
+                                <label class="normalText">{{userData.winStreak}}</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="labelText">Loss Streak</label>
+                                <br>
+                                <label class="normalText">{{userData.lossStreak}}</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="hStatsDiv">
+                    <table id="hStatsTable">
+                        <tr>
+                            <td id="rightAlignTD">
+                                <label class="labelText" style="color:green">{{userData.winRatio}} </label>
+                            </td>
+                            <td>
+                                <label class="labelText">Win Rate</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="rightAlignTD">
+                                <label class="labelText" style="color:green">{{userData.points}} </label>
+                            </td>
+                            <td>
+                                <label class="labelText">Points</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="rightAlignTD">
+                                <label class="labelText" style="color:green">{{userData.lossStacks}}</label>
+                            </td>
+                            <td>
+                                <p class="labelText">
+                                    Bonus
+                                    <br>
+                                    Stacks
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -86,7 +89,7 @@
                 <i class="infoText">Report your wins here.</i>
             </div>
             <div id="pointsDiv">
-                <label class="normalText">Prev. beat: <font id="pointsDivFont">{{userData.prevOpp}}</font></label>
+                <label class="infoText">Previously beat: <font id="pointsDivFont">{{userData.prevOpp}}</font></label>
             </div>
             <div>
                 <form id="playerList" method="post" action="/winner">
@@ -127,7 +130,7 @@
         <div class="panelDiv">
             <h2 id="claimTitle" class="sectionTitles">Claim Rewards</h2>
             <div id="pointsDiv">
-                <label class="normalText">My points: <font id="pointsDivFont">{{userData.points}}</font></label>
+                <label class="infoText">My points: <font id="pointsDivFont">{{userData.points}}</font></label>
             </div>
             <div class="infoDiv">
                 <i class="infoText">Redeem points here!</i>
