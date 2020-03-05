@@ -137,6 +137,37 @@ body{
     float: right;
 }
 
+/*Header Bar CSS.*/
+#mainHeaderDiv{
+    background-color: #FFDE00;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FFDE00;
+}
+
+#headerTitleDiv{
+    margin: 10px;
+    display: inline-block;
+}
+
+#headerInfoDiv{
+    float: right;
+}
+
+#headerInfo{
+    background-color: rgb(151, 1, 1);
+    border-right-color: rgb(151, 1, 1);
+    border-right-style: solid;
+    border-right-width: 2px;
+    color: white;
+    box-shadow: 0px 2px 5px 2px #888888;
+
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 /*Login page CSS*/
 #loginPageDiv{
     width: 375px;
@@ -187,32 +218,6 @@ body{
     color: rgb(173, 0, 0);
 }
 
-/*Header Bar CSS.*/
-#mainHeaderDiv{
-    background-color: #FFDE00;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #FFDE00;
-}
-
-#headerTitleDiv{
-    margin: 10px;
-    display: inline-block;
-}
-
-#headerInfoDiv{
-    float: right;
-}
-
-#headerInfo{
-    background-color: rgb(151, 1, 1);
-    color: white;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    box-shadow: 0px 3px 5px 2px #888888;
-}
 
 /*Main Page CSS*/
 #mainLogout{
@@ -277,18 +282,25 @@ body{
     margin: auto;
 }
 
-#matchFormDiv{
-    width: 100%;
-}
-
 #brTable{
-    width: 100%;
+    width: 96%;
 
-    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+
+    text-align: center;
+    border-spacing: 10px;
 }
 
 #playerDrop{
+    font-size: 16px;
     height: 25px;
+    margin: 10px;
+}
+
+#matchRange{
+    width: 75%;
 }
 
 #winSubmit{
@@ -298,11 +310,6 @@ body{
     color: white;
 
     padding: 10px;
-}
-
-#matchRange{
-
-    background-color: red;
 }
 
 #pointsDiv{

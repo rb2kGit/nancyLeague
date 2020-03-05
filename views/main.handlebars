@@ -67,12 +67,12 @@
             <div class="infoDiv">
                 <i class="infoText">Report your wins here.</i>
             </div>
-            <div id="matchFormDiv">
+            <div>
                 <form id="playerList" method="post" action="/winner">
                     <table name="brTable" id="brTable">
                         <tr>
                             <td>
-                                <label class="labelText">Defeated:</label>
+                                <label class="labelText">Defeated</label>
                                 <br>
                                 <select name="playerDrop" id="playerDrop">
                                     <option></option>
@@ -80,15 +80,21 @@
                                     <option value="{{this.userName}}" name="playerOption" id="playerOption">{{this.screenName}}</option>
                                     {{/each}}
                                 </select>
+                                <br>
+                                <labe class="labelText">In</labe>
                             </td>
+                        </tr>
+                        <tr>
                             <td>
-                                <label class="labelText">Games: </label>
-                                <label name="matchLabel" id="matchLabel" class="labelText" for="matchRange">1</label>
+                                <label name="matchLabel" id="matchLabel" class="labelText" for="matchRange">1 </label>
+                                <label class="labelText">Games</label>
                                 <br>
                                 <input name="matchAmount" id="matchRange" type="range" min="1" max="10" value="1" oninput="labelInput()"></input>
                             </td>
+                        </tr>
+                        <tr>
                             <td>
-                                <button id="winSubmit" type="submit" value="Beat em">Beat em'</button>
+                                <button class="logoutButton" type="submit" value="Beat em">Beat em'</button>
                             </td>
                         </tr>
                     </table>
