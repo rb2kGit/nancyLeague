@@ -47,38 +47,43 @@ MongoClient.connect(mongoURL, (err, client) => {
     }
     
     //Stat calculation functions.
-    function winCalc(userData, matchAmount, opponentData, e4Data){
+    function winCalc(userData, opponentData, e4Data){
         var pointAward = 100;
 
-        userData.matchesPlayed += 1 * matchAmount;
-        userData.wins += 1 * matchAmount;
-        userData.winStreak += 1 * matchAmount;
+        userData.matchesPlayed += 1;
+        userData.wins += 1;
+        userData.winStreak += 1;
         userData.lossStreak = 0;
         userData.lossStacks = 0;
+        userData.prevOpp = opponentData.screenName;
         
         //Point modifiers.
-        if(opponentData.screenName == e4Players[0].alpha)
+        if(opponentData.screenName == userData.prevOpp){
+            pointAward = 50;
+            userData.points += pointAward;
+        }
+        else if(opponentData.screenName == e4Players[0].alpha)
         {
             pointAward += 250;
-            userData.points += pointAward * matchAmount;
+            userData.points += pointAward;
         }
         else if(opponentData.screenName == e4Data[0].beta)
         {
             pointAward += 200;
-            userData.points += pointAward * matchAmount;
+            userData.points += pointAward;
         }
         else if(opponentData.screenName == e4Data[0].delta)
         {
             pointAward += 150;
-            userData.points += pointAward * matchAmount;
+            userData.points += pointAward;
         }
         else if(opponentData.screenName == e4Data[0].omega)
         {
             pointAward += 100;
-            userData.points += pointAward * matchAmount;
+            userData.points += pointAward;
         }
         else{
-            userData.points += pointAward * matchAmount;
+            userData.points += pointAward;
         }
         
         //Win Ratio calculator.
@@ -93,11 +98,11 @@ MongoClient.connect(mongoURL, (err, client) => {
         return userData;
     }
 
-    function lossCalc(opponentData, matchAmount){
+    function lossCalc(opponentData){
         var pointAward = 200;
 
-        opponentData.matchesPlayed += 1 * matchAmount;
-        opponentData.losses += 1 * matchAmount;
+        opponentData.matchesPlayed += 1;
+        opponentData.losses += 1;
 
 
         if(opponentData.wins == 0){
@@ -108,16 +113,13 @@ MongoClient.connect(mongoURL, (err, client) => {
         }
 
         opponentData.winStreak = 0;
-        opponentData.lossStreak = 1 * matchAmount;
+        opponentData.lossStreak += 1;
         
-        let i;
-        for(i = 0; i < matchAmount; i++){
-            if(opponentData.lossStacks < 5){
-                opponentData.lossStacks += 1;
-            }
-
-            opponentData.points += (pointAward * (1 + (0.10 * opponentData.lossStacks)));
+        if(opponentData.lossStacks < 5){
+            opponentData.lossStacks += 1;
         }
+
+        opponentData.points += (pointAward * (1 + (0.10 * opponentData.lossStacks)));
         
         return opponentData;
     }
@@ -348,11 +350,12 @@ MongoClient.connect(mongoURL, (err, client) => {
                     //Elite 4 data initializations.
                     var alphaPlayer, betaPlayer, deltaPlayer, omegaPlayer; 
                     e4Players = data;
-                    gamesPlayed = req.body.matchAmount;
 
-                    //Player stat Calculations.    
-                    winCalc(userData, matchAmount, opponentData, e4Players);
-                    lossCalc(opponentData, matchAmount);
+                    //Player stat Calculations.
+                    for(var i = 0; i < matchAmount; i++){
+                        winCalc(userData, opponentData, e4Players);
+                        lossCalc(opponentData);
+                    }    
 
                     
                     playerData.sort(function(a, b) {
@@ -374,7 +377,8 @@ MongoClient.connect(mongoURL, (err, client) => {
                             lossStreak: userData.lossStreak,
                             lossStacks: userData.lossStacks,
                             winRatio: userData.winRatio.toFixed(2),
-                            points: userData.points}},
+                            points: userData.points,
+                            prevOpp: userData.prevOpp}},
                         {returnOriginal: false},
                         (err, result) => {
                             if(err) throw err;
